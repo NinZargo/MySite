@@ -12,7 +12,6 @@ body {
 
   .calculator-grid {
     display: grid;
-    border: radius 15px;
     justify-content: center;
     align-content: center;
     min-height: 100vh;
