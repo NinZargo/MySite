@@ -57,6 +57,9 @@ class Calculator {
       case '^':
         computation = prev ** current
         break
+      case 'RND':
+        computation = parseFloat(prev.toFixed(current))
+        break
       default:
         return
     }
@@ -109,7 +112,12 @@ const calculator = new Calculator(previousOperandTextElement, currentOperandText
 
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
-    calculator.appendNumber(button.innerText)
+    console.log(button.innerText)
+    if (isNaN(button.innerText) && button.innerText != '.'){
+      calculator.appendNumber(3.14159265359)
+    } else {
+      calculator.appendNumber(button.innerText)
+    }
     calculator.updateDisplay()
   })
 })
@@ -119,10 +127,6 @@ operationButtons.forEach(button => {
     calculator.chooseOperation(button.innerText)
     calculator.updateDisplay()
   })
-})
-
-ansButton.addEventListener('click', () => {
-  calculator.ans()
 })
 
 equalsButton.addEventListener('click', button => {
@@ -142,7 +146,7 @@ deleteButton.addEventListener('click', button => {
 
 document.addEventListener('keydown', function (event) {
   let patternForNumbers = /[0-9]/g;
-  let patternForOperators = /[+\-*^\/]/g
+  let patternForOperators = /[+\-*^RND\/]/g
   if (event.key.match(patternForNumbers)) {
     event.preventDefault();
     calculator.appendNumber(event.key)
