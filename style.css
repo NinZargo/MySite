@@ -4,16 +4,23 @@
   font-weight: normal;
 }
 
+:root {
+  --borderRadius: 15px
+}
+
 body {
   margin: 0;
   padding: 0;
   background: linear-gradient(to right, #CBCE91FF, #EA738DFF);
+  align-items: center;
   /*background: #151515*/
   }
 
   .calculator-grid {
+    
     display: grid;
     justify-content: center;
+    border: 10px solid rgba(0, 0, 0, 0.75);
     border-radius: 15px;
     align-content: center;
     min-height: 100vh;
@@ -33,6 +40,10 @@ body {
         background-color: #444444;
       }
 
+      #RND {
+        border-bottom-right-radius: var(--borderRadius);
+      }
+
       .single {
         color: #EDEDED;
         background-color: #171717dd;
@@ -48,6 +59,7 @@ body {
         grid-column: span 3;
         color: #FFFFFF;
         background-color: #171717f5;
+        border-bottom-left-radius: var(--borderRadius) ;
       }
 
       .output{
@@ -60,6 +72,8 @@ body {
         padding: 10px;
         word-wrap: break-word;
         word-break: break-all;
+        border-top-left-radius: var(--borderRadius) ;
+        border-top-right-radius: var(--borderRadius) ;
       }
 
       .output .previous-operand{
