@@ -16,21 +16,62 @@ body {
   /*background: #151515*/
   }
 
+  a.button{
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  /* Navbar links */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Links - change color on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .container {
+    display: grid;
+    justify-content: center;
+    border-radius: 15px;
+    align-content: center;
+
+    grid-template-columns: repeat(10, 100px);
+    grid-template-rows: repeat(10, 100px);
+  }
+
   .calculator-grid {
     
     display: grid;
     justify-content: center;
-    border: 10px solid rgba(0, 0, 0, 0.75);
     border-radius: 15px;
     align-content: center;
-    min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(6, 100px);
+    padding: 20px;
+    min-height: 60vh;
+    min-width: 40vh;
+    grid-template-columns: repeat(4, 6%);
+    grid-template-rows: minmax(120px, auto) repeat(6, 80px);
     }
 
     .calculator-grid > button {
       cursor: pointer;
-      font-size: 2rem;
+      font-size: 160%;
       transition: 550ms;
       border: none;
     }
@@ -64,6 +105,7 @@ body {
 
       .output{
         grid-column: 1 / -1;
+        font-size: 100%;
         background-color: rgba(0, 0, 0, 0.75);
         display: flex;
         align-items: flex-end;
